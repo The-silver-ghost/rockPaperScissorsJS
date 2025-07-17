@@ -17,8 +17,21 @@ function getHumanChoice(){
 	let choiceInput = " ";
 	while (choiceInput != "r" && choiceInput != "p" && choiceInput != "s"){
 		choiceInput = prompt("Rock Paper Scissors[r,p,s]: ");
+		switch (choiceInput){
+			case "r":
+				return "Rock";
+				break;
+			case "p":
+				return "Paper";
+				break;
+			case "s":
+				return "Scissors";
+				break;
+			default:
+				console.log("Invalid Answer. Try again.");
+				break;
+		}
 	}
-	return choiceInput;
-}
 
+}
 console.log(getHumanChoice());
