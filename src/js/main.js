@@ -13,4 +13,12 @@ function generateComputerChoice(){
 	}
 }
 
-console.log(generateComputerChoice());
+function getHumanChoice(){
+	let choiceInput = " ";
+	while (choiceInput != "r" && choiceInput != "p" && choiceInput != "s"){
+		choiceInput = prompt("Rock Paper Scissors[r,p,s]: ");
+	}
+	return choiceInput;
+}
+
+console.log(getHumanChoice());
