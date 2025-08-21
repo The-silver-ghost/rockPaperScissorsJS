@@ -54,7 +54,7 @@ function playRound(computerChoice,humanChoice){
 }
 
 //main 
-let playerScore = 0, computerScore = 0;
+/*let playerScore = 0, computerScore = 0;
 for (rounds = 0; rounds < 5; rounds += 1){
 	console.log(`Round ${rounds + 1}`);
 	let result = playRound(generateComputerChoice(),getHumanChoice());
@@ -85,4 +85,4 @@ else if (playerScore > computerScore){
 }
 else{
 	console.log(`It's a tie!`);
-}
+}*/
