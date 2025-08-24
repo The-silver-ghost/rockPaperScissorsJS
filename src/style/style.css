@@ -1,0 +1,32 @@
+html {
+	background-color: #050949;
+	color: #f2e3f7;
+}
+
+div {
+	display: flex;
+}
+
+.score-box {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	text-align: center;
+}
+
+#options {
+	justify-content: space-between;
+}
+
+.container, #options{
+	margin: 0px 250px 0px 250px;
+}
+
+button {
+	padding: 10px 15px 10px 15px;
+	width: 100px;
+}
+
+#winner {
+	justify-content: center;
+}
