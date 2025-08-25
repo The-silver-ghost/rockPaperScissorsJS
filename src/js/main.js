@@ -20,7 +20,7 @@ function playRound(event){
 	let humanChoice = event.target.textContent;
 	let messageTemplate = `Computer picked ${computerChoice}.
 	You picked ${humanChoice}.`
-	while (playerScore !== 5 && computerScore !== 5){
+	while (playerScore < 5 && computerScore < 5){
 		round++;
 		if (computerChoice == humanChoice){
 			//tie
@@ -52,10 +52,10 @@ function playRound(event){
 		}
 	}
 	if (playerScore > computerScore){
-		//player win
+		winnerScreen.firstChild.textContent = "Congrats!! You Won!";
 	}
 	else {
-		//computer win
+		winnerScreen.firstChild.textContent = "You lost this one. Try again next time!";
 	}
 }
 
