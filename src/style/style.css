@@ -1,5 +1,5 @@
 html {
-	background-color: #050949;
+	background-color: #101828;
 	color: #f2e3f7;
 }
 
@@ -25,6 +25,9 @@ div {
 button {
 	padding: 10px 15px 10px 15px;
 	width: 100px;
+	background-color: #10bbce;
+	color: #0a0a0a;
+	border: solid 2px #f5f904;
 }
 
 #winner {
