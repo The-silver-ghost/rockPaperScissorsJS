@@ -30,6 +30,6 @@ button {
 	border: solid 2px #f5f904;
 }
 
-#winner {
+#winner,#commentary {
 	justify-content: center;
 }
