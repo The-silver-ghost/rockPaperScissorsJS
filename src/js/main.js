@@ -26,6 +26,8 @@ function playRound(event){
 			//tie
 			commentary.firstChild.textContent = `Round ${round}: 
 			${messageTemplate} This round is a tie!`;
+			playerScoreboard.textContent = playerScore;
+			computerScoreboard.textContent = computerScore;
 			return;
 		}
 		else if (computerChoice == "Rock" && humanChoice == "Scissors" ||
@@ -35,6 +37,8 @@ function playRound(event){
 			commentary.firstChild.textContent = `Round: ${round}:  
 			${messageTemplate} Computer wins this round!`;
 			computerScore++;
+			playerScoreboard.textContent = playerScore;
+			computerScoreboard.textContent = computerScore;
 			return;
 		}
 		else{
@@ -42,6 +46,8 @@ function playRound(event){
 			commentary.firstChild.textContent = `Round ${round}: 
 			${messageTemplate} You win this round!`;
 			playerScore++;
+			playerScoreboard.textContent = playerScore;
+			computerScoreboard.textContent = computerScore;			
 			return;
 		}
 	}
