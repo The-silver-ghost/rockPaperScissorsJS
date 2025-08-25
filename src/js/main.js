@@ -13,47 +13,59 @@ function generateComputerChoice(){
 	}
 }
 
-function getHumanChoice(){
-	let choiceInput = " ";
-	while (choiceInput != "r" && choiceInput != "p" && choiceInput != "s"){
-		choiceInput = prompt("Rock Paper Scissors[r,p,s]: ");
-		switch (choiceInput){
-			case "r":
-				return "Rock";
-				break;
-			case "p":
-				return "Paper";
-				break;
-			case "s":
-				return "Scissors";
-				break;
-			default:
-				console.log("Invalid Answer. Try again.");
-				break;
+
+function playRound(event){
+
+	let computerChoice = generateComputerChoice();
+	let humanChoice = event.target.textContent;
+	let messageTemplate = `Computer picked ${computerChoice}.
+	You picked ${humanChoice}.`
+	while (playerScore !== 5 && computerScore !== 5){
+		round++;
+		if (computerChoice == humanChoice){
+			//tie
+			commentary.firstChild.textContent = `Round ${round}: 
+			${messageTemplate} This round is a tie!`;
+			return;
+		}
+		else if (computerChoice == "Rock" && humanChoice == "Scissors" ||
+		computerChoice == "Paper" && humanChoice == "Rock" ||	
+		computerChoice == "Scissors" && humanChoice == "Paper"){
+			//computer win
+			commentary.firstChild.textContent = `Round: ${round}:  
+			${messageTemplate} Computer wins this round!`;
+			computerScore++;
+			return;
+		}
+		else{
+			//player win
+			commentary.firstChild.textContent = `Round ${round}: 
+			${messageTemplate} You win this round!`;
+			playerScore++;
+			return;
 		}
 	}
-}
-
-function playRound(computerChoice,humanChoice){
-	let messageTemplate = `Computer picked ${computerChoice}.
-	You picked ${humanChoice}.\n`
-	if (computerChoice == humanChoice){
-		console.log(`${messageTemplate} This round is a tie!`);
-		return "tie";
+	if (playerScore > computerScore){
+		//player win
 	}
-	else if (computerChoice == "Rock" && humanChoice == "Scissors" ||
-	computerChoice == "Paper" && humanChoice == "Rock" ||	
-	computerChoice == "Scissors" && humanChoice == "Paper"){
-		console.log(`${messageTemplate} Computer wins this round!`);
-		return "computer";
-	}
-	else{
-		console.log(`${messageTemplate} You win this round`);
-		return "player";
+	else {
+		//computer win
 	}
 }
 
-//main 
+//main
+let playerScore = 0, computerScore = 0, round = 0;
+const commentary = document.querySelector('#commentary');
+const playerScoreboard = document.querySelector('#player-score');
+const computerScoreboard = document.querySelector('#computer-score');
+const winnerScreen = document.querySelector('#winner');
+
+
+const choiceInput = document.querySelector("#options");
+choiceInput.addEventListener('click',(event)=>{
+	if (event.target.nodeName === 'BUTTON'){playRound(event);}
+});
+
 /*let playerScore = 0, computerScore = 0;
 for (rounds = 0; rounds < 5; rounds += 1){
 	console.log(`Round ${rounds + 1}`);
