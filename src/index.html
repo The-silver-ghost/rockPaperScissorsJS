@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Rock Paper Scissors</title>
-		<script src="./js/main.js"></script>
+		<script src="./js/main.js" defer></script>
 		<link rel="stylesheet" href="./style/style.css">
 	</head>
 	<body>
@@ -14,7 +14,7 @@
 			<li>Scissors beats paper</li>
 			<li>Paper beats rock</li>
 		</ul>
-		<p>You have 5 rounds!</p>
+		<p>First to 5 wins!</p>
 		<div class="container">
 			<div class="score-box">
 				<h1>Your Score</h1>
@@ -25,7 +25,8 @@
 				<h2 id="computer-score">0</h2>
 			</div>
 		</div>
-		<div id="winner"><h1>Test</h1></div>
+		<div id='commentary'><p></p></div>
+		<div id="winner"><h1></h1></div>
 		<div id="options">
 			<button>Rock</button>
 			<button>Paper</button>
