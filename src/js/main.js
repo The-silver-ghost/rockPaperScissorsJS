@@ -15,12 +15,11 @@ function generateComputerChoice(){
 
 
 function playRound(event){
-
 	let computerChoice = generateComputerChoice();
 	let humanChoice = event.target.textContent;
 	let messageTemplate = `Computer picked ${computerChoice}.
 	You picked ${humanChoice}.`
-	while (playerScore < 5 && computerScore < 5){
+	 while (playerScore < 5 && computerScore < 5) {
 		round++;
 		if (computerChoice == humanChoice){
 			//tie
@@ -51,12 +50,6 @@ function playRound(event){
 			return;
 		}
 	}
-	if (playerScore > computerScore){
-		winnerScreen.firstChild.textContent = "Congrats!! You Won!";
-	}
-	else {
-		winnerScreen.firstChild.textContent = "You lost this one. Try again next time!";
-	}
 }
 
 //main
@@ -70,37 +63,10 @@ const winnerScreen = document.querySelector('#winner');
 const choiceInput = document.querySelector("#options");
 choiceInput.addEventListener('click',(event)=>{
 	if (event.target.nodeName === 'BUTTON'){playRound(event);}
+	if (playerScore === 5){
+		winnerScreen.firstChild.textContent = "Congrats!! You Won!";
+	}
+	else if (computerScore === 5){
+		winnerScreen.firstChild.textContent = "You lost this one. Try again next time!";
+	}
 });
-
-/*let playerScore = 0, computerScore = 0;
-for (rounds = 0; rounds < 5; rounds += 1){
-	console.log(`Round ${rounds + 1}`);
-	let result = playRound(generateComputerChoice(),getHumanChoice());
-	if (result == "computer"){
-		computerScore += 1;
-		console.log(`The score as of now:
-		Computer: ${computerScore}
-		You: ${playerScore}`);
-	}
-	else if (result == "player"){
-		playerScore += 1;
-		console.log(`The score as of now:
-		Computer: ${computerScore}
-		You: ${playerScore}`);
-	}
-	else {
-	console.log(`The score as of now:
-	Computer: ${computerScore}
-	You: ${playerScore}`);	
-	}
-}
-
-if (computerScore > playerScore){
-	console.log(`The Computer Wins!`);
-}
-else if (playerScore > computerScore){
-	console.log(`You win!`);
-}
-else{
-	console.log(`It's a tie!`);
-}*/
