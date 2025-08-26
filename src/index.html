@@ -3,15 +3,35 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Rock Paper Scissors</title>
-		<script src="./js/main.js"></script>
+		<script src="./js/main.js" defer></script>
+		<link rel="stylesheet" href="./style/style.css">
 	</head>
 	<body>
-		<h1>Instructions to play the game</h1>
-		<ol>
-			<li>Right-Click on the webpage</li>
-			<li>Select 'Inspect'</li>
-			<li>Select 'Console</li>
-		</ol>
-		<p>You might have to spam 5 values before getting to it though</p>
+		<h1>Welcome to Rock Paper Scissors</h1>
+		<p>Rules are simple:</p>
+		<ul>
+			<li>Rock beats scissors</li>
+			<li>Scissors beats paper</li>
+			<li>Paper beats rock</li>
+		</ul>
+		<p>First to 5 wins!</p>
+		<p>Refresh the page to restart</p>
+		<div class="container">
+			<div class="score-box">
+				<h1>Your Score</h1>
+				<h2 id="player-score">0</h2>
+			</div>
+			<div class="score-box">
+				<h1>Computer's Score</h1>
+				<h2 id="computer-score">0</h2>
+			</div>
+		</div>
+		<div id='commentary'><p></p></div>
+		<div id="winner"><h1></h1></div>
+		<div id="options">
+			<button>Rock</button>
+			<button>Paper</button>
+			<button>Scissors</button>
+		</div>
 	</body>
 </html>
